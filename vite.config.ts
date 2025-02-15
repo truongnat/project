@@ -10,4 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    allowedHosts: ["1om2mzbw-qnkubaiz-x6lmk5ykhyay.acb2-preview.marscode.dev", "1om2mzbw-qnkubaiz-x6lmk5ykhyay.acb2-preview.marscode.dev"]
+  }
 })

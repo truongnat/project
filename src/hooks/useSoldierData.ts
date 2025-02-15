@@ -1,17 +1,20 @@
-import { Soldier } from '@/types/soldier';
-import { useState, useCallback } from 'react';
+import { supabase } from "@/lib/supabase";
+import { Soldier } from "@/types/soldier";
+import { useCallback, useState } from "react";
 
 export const useSoldierData = () => {
   const [soldiers, setSoldiers] = useState<Soldier[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchSoldiers = useCallback(async (page?: number, limit?: number) => {
+  const fetchSoldiersData = useCallback(async (page: number, limit: number) => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/soldiers?page=${page}&limit=${limit}`);
-      const data = await response.json();
-      setSoldiers(data.soldiers);
+      const { data, error } = await supabase.from('soldiers').select('*').range(page, limit);
+      if (error) {
+        throw new Error(error.message);
+      }
+      setSoldiers(data);
     } catch (err) {
       const error = err as Error;
       setError(error.message || 'An unknown error occurred');
@@ -23,13 +26,11 @@ export const useSoldierData = () => {
   const addSoldier = useCallback(async (soldierData: Omit<Soldier, 'id'>) => {
     try {
       setLoading(true);
-      const response = await fetch('/api/soldiers', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(soldierData),
-      });
-      const newSoldier = await response.json();
-      setSoldiers(prev => [...prev, newSoldier]);
+      const { data, error } = await supabase.from('soldiers').insert([soldierData]);
+      if (error) {
+        throw new Error(error.message);
+      }
+      setSoldiers(prev => [...prev, (data || [])[0]]);
     } catch (err) {
       const error = err as Error;
       setError(error.message || 'An unknown error occurred');
@@ -38,20 +39,15 @@ export const useSoldierData = () => {
     }
   }, []);
 
-  const updateSoldier = useCallback(async (id: string, updates: Partial<Soldier>) => {
+  const updateSoldier = useCallback(async (soldierId: string, soldierData: Partial<Soldier>) => {
     try {
       setLoading(true);
-      const response = await fetch(`/api/soldiers/${id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(updates),
-      });
-      const updatedSoldier = await response.json();
-      setSoldiers(prev => 
-        prev.map(soldier => 
-          soldier.id === id ? updatedSoldier : soldier
-        )
-      );
+      const { data, error } = await supabase.from('soldiers').update(soldierData).eq('id', soldierId);
+      if (error) {
+        throw new Error(error.message);
+      }
+      const firstData = data ? data[0] : {}
+      setSoldiers(prev => prev.map(soldier => soldier.id === soldierId ? { ...soldier, ...firstData } : soldier));
     } catch (err) {
       const error = err as Error;
       setError(error.message || 'An unknown error occurred');
@@ -60,11 +56,14 @@ export const useSoldierData = () => {
     }
   }, []);
 
-  const deleteSoldier = useCallback(async (id: string) => {
+  const deleteSoldier = useCallback(async (soldierId: string) => {
     try {
       setLoading(true);
-      await fetch(`/api/soldiers/${id}`, { method: 'DELETE' });
-      setSoldiers(prev => prev.filter(soldier => soldier.id !== id));
+      const { error } = await supabase.from('soldiers').delete().eq('id', soldierId);
+      if (error) {
+        throw new Error(error.message);
+      }
+      setSoldiers(prev => prev.filter(soldier => soldier.id !== soldierId));
     } catch (err) {
       const error = err as Error;
       setError(error.message || 'An unknown error occurred');
@@ -73,13 +72,5 @@ export const useSoldierData = () => {
     }
   }, []);
 
-  return {
-    soldiers,
-    loading,
-    error,
-    fetchSoldiers,
-    addSoldier,
-    updateSoldier,
-    deleteSoldier
-  };
-}; 
+  return { soldiers, loading, error, fetchSoldiersData, addSoldier, updateSoldier, deleteSoldier };
+};
