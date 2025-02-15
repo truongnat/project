@@ -1,0 +1,196 @@
+20 phục lục dưới đây
+1.	Đảng viên
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Trú quán
+-	Ngày vào đảng
+-	Ghi chú
+2.	Bố mẹ là Đảng viên
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Trú quán
+-	Họ tên bố
+-	Họ tên mẹ
+-	Ghi chú
+3.	Dân tộc ít người
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Trú quán
+-	Dân tộc
+-	Ghi chú
+4.	Tôn giáo
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Trú quán
+-	Tôn giáo
+-	Ghi chú
+5.	Trình độ đại học cao đẳng trung cấp
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Trình độ đào tạo (đại học, cao đẳng, trung cấp)
+-	Hệ đào tạo (chính quy,..)
+-	Quê quán
+-	Trú quán
+-	Tên trường
+-	Ngành học
+6.	Có vợ con
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Quê quán
+-	Họ tên vợ
+-	Thời gian kết hôn
+-	Ghi chú
+7.	Ly hôn
+-	Họ tên
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Đang ở cùng ai
+-	Ghi chú
+8.	Bố hoặc mẹ chết
+-	Họ tên
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Họ tên bố
+-	Họ tên mẹ
+-	Ghi chú
+9.	Bản thân vi phạm pháp luật, xử phạt hành chính
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Đơn vị
+-	Quê quán
+-	Thời gian, lý do và hình thức xử phạt
+-	Kết quả xác minh
+-	Ghi chú
+10.	Có người thân vi phạm pháp luật
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Đơn vị
+-	Quê quán
+-	Trú quán
+-	Thân nhân vi phạm
+-	Nội dung vi phạm – Thời gian
+-	Án phạt
+-	Ghi chú
+11.	Có hình xăm trên người
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Mô tả hình xăm
+-	Ghi chú
+12.	Vay nợ app
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Địa chỉ vay – Hình thức vay
+-	Số tiền vay – Thời gian
+-	Hiện nợ còn
+-	Mục đích vay
+-	Ghi chú
+13.	 Thân nhân ở nước ngoài
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Họ tên thân nhân
+-	Ghi chú
+14.	 Đã từng đi nước ngoài
+-	Họ tên – Ngày tháng năm sinh – dân tộc, tôn giáo
+-	Đơn vị
+-	Quê quán
+-	Nước đến
+-	Visa
+-	Số lần
+-	Thời gian đi – về
+-	Hình thức đi
+-	Kết quả kiểm tra xác minh
+-	Ghi chú
+15.	 Sử dụng ma túy
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Hình thức sử dụng
+-	Kết quả kiểm tra xác minh
+-	Ghi chú
+16.	Gia đình chính sách
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Họ tên bố
+-	Họ tên mẹ
+-	Nội dung
+-	Ghi chú
+17.	 Bệnh hiểm nghèo
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Họ tên bố
+-	Họ tên mẹ
+-	Nội dung
+-	Ghi chú
+18.	Hoàn cảnh khó khăn
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Họ tên bố
+-	Họ tên mẹ
+-	Nội dung
+-	Ghi chú
+19.	Bố mẹ là bộ đội, cán bộ
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Họ tên bố
+-	Họ tên mẹ
+-	Nội dung
+-	Ghi chú
+20.	Tuyển lẻ
+-	Họ tên
+-	Ngày tháng năm sinh
+-	Chức vụ
+-	Đơn vị
+-	Quê quán
+-	Dân tộc – tôn giáo
+-	Nội dung
+-	Ghi chú
+
+tạo 1 danh sách chiến sĩ bao gồm đầy đủ các trường để cuối cùng lọc ra 20 phụ lục bên dưới
+
+
+Tính năng chính:
+
+- Danh sách chiến sĩ
+- Form nhập dữ liệu để thêm chiến sĩ
+- Form sửa xoa
+- Show 20 phụ lục bên dưới dựa vào data đã thêm
+- Phân trang hoặc show all
+
+techstack dựa vào project đang có sẵn
